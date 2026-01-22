@@ -7,13 +7,13 @@ type ThemeProviderProps = ComponentProps<typeof NextThemesProvider>;
 
 /**
  * Theme provider component that enables light/dark mode support
- * based on system preferences with manual override capability.
+ * Defaults to dark mode with manual override capability.
  */
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="dark"
       enableSystem
       disableTransitionOnChange={false}
       {...props}
