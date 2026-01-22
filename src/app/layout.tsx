@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Lexend, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import { ThemeProvider } from "@/components/providers";
+import { SkipLink } from "@/components/common";
+import { Header, Footer } from "@/components/layout";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -86,8 +89,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lexend.variable} ${dmSans.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html
+      lang="en"
+      className={`${lexend.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased min-h-screen flex flex-col">
+        <ThemeProvider>
+          <SkipLink />
+          <Header />
+          <main id="main-content" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

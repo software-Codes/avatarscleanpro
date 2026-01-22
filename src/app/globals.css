@@ -5,57 +5,86 @@
 @layer base {
   :root {
     /* Primary - Deep Teal (Trust & Cleanliness) */
-    --primary: 173 58% 39%; /* #28837a */
+    --primary: 173 58% 39%;
+    /* #28837a */
     --primary-foreground: 0 0% 100%;
-    
+
     /* Secondary - Warm Gold (Premium & Quality) */
-    --secondary: 43 74% 49%; /* #d4a017 */
+    --secondary: 43 74% 49%;
+    /* #d4a017 */
     --secondary-foreground: 0 0% 10%;
-    
+
     /* Accent - Fresh Mint (Clean & Fresh) */
-    --accent: 158 64% 52%; /* #3db389 */
+    --accent: 158 64% 52%;
+    /* #3db389 */
     --accent-foreground: 0 0% 100%;
-    
+
     /* Background & Surfaces */
     --background: 0 0% 100%;
     --foreground: 220 13% 18%;
-    
+
     /* Muted/Subtle */
     --muted: 210 20% 96%;
     --muted-foreground: 215 14% 34%;
-    
+
     /* Cards & Containers */
     --card: 0 0% 100%;
     --card-foreground: 220 13% 18%;
-    
+
     /* Borders */
     --border: 214 20% 90%;
     --input: 214 20% 90%;
     --ring: 173 58% 39%;
-    
+
     /* Status Colors */
     --success: 142 76% 36%;
     --warning: 38 92% 50%;
     --destructive: 0 84% 60%;
-    
+    --destructive-foreground: 0 0% 100%;
+
     /* Popover */
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 18%;
-    
+
     /* Radius */
     --radius: 0.5rem;
   }
 
   .dark {
+    /* Primary - Lighter teal for dark mode */
     --primary: 173 58% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Gold remains similar */
+    --secondary: 43 74% 55%;
+    --secondary-foreground: 0 0% 10%;
+
+    /* Accent - Brighter mint for dark mode */
+    --accent: 158 64% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Background & Surfaces - Dark slate */
     --background: 222 47% 8%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+
+    /* Muted/Subtle */
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --border: 217 33% 17%;
+
+    /* Cards & Containers */
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    /* Borders */
+    --border: 217 33% 22%;
     --input: 217 33% 17%;
+    --ring: 173 58% 50%;
+
+    /* Status Colors */
+    --destructive: 0 62% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Popover */
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
   }
@@ -65,9 +94,161 @@
   * {
     @apply border-border;
   }
-  
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom scrollbar for dark mode */
+  .dark ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 5px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 5px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+/* Font family utilities */
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-lexend), system-ui, sans-serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+  }
+}
+
+/* Animation utilities */
+@layer utilities {
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  /* Slide down animation */
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out forwards;
+  }
+
+  /* Scale in animation */
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+
+  /* Staggered animation delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gradient text utility */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
