@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary - Deep Teal (Trust & Cleanliness) */
+    --primary: 173 58% 39%; /* #28837a */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Warm Gold (Premium & Quality) */
+    --secondary: 43 74% 49%; /* #d4a017 */
+    --secondary-foreground: 0 0% 10%;
+    
+    /* Accent - Fresh Mint (Clean & Fresh) */
+    --accent: 158 64% 52%; /* #3db389 */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Surfaces */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+    
+    /* Muted/Subtle */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 14% 34%;
+    
+    /* Cards & Containers */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    
+    /* Borders */
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 173 58% 39%;
+    
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --primary: 173 58% 50%;
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
