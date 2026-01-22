@@ -45,6 +45,10 @@ export function MobileMenu({ className }: MobileMenuProps) {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
+  const themeAriaLabel = mounted
+    ? `Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`
+    : "Toggle theme";
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
@@ -99,7 +103,7 @@ export function MobileMenu({ className }: MobileMenuProps) {
               size="sm"
               onClick={toggleTheme}
               className="gap-2"
-              aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
+              aria-label={themeAriaLabel}
             >
               {mounted && (
                 <>

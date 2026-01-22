@@ -47,6 +47,10 @@ export function Header({ className }: HeaderProps) {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
+  const themeAriaLabel = mounted
+    ? `Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`
+    : "Toggle theme";
+
   return (
     <header
       className={cn(
@@ -74,7 +78,7 @@ export function Header({ className }: HeaderProps) {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
+              aria-label={themeAriaLabel}
               className="text-muted-foreground hover:text-foreground"
             >
               {mounted && (
@@ -107,7 +111,7 @@ export function Header({ className }: HeaderProps) {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
+              aria-label={themeAriaLabel}
               className="text-muted-foreground hover:text-foreground"
             >
               {mounted && (
