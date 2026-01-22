@@ -6,6 +6,10 @@ import {
   Testimonials,
   CTASection,
 } from "@/components/sections/home";
+import {
+  LocalBusinessSchema,
+  WebsiteSchema,
+} from "@/components/seo";
 
 /**
  * Home Page - Avatar CleanPro Landing Page
@@ -21,6 +25,11 @@ import {
 export default function HomePage() {
   return (
     <>
+      {/* Structured Data for SEO */}
+      <LocalBusinessSchema />
+      <WebsiteSchema />
+
+      {/* Page Content */}
       <HeroSection />
       <TrustIndicators />
       <ServicesOverview />

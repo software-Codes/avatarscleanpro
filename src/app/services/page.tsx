@@ -8,6 +8,7 @@ import {
   CategoryNavigation,
   ServiceCategory,
 } from "@/components/sections/services";
+import { ServiceSchema } from "@/components/seo";
 import {
   serviceCategories,
   getCategoryCount,
@@ -39,6 +40,11 @@ export default function ServicesPage() {
 
   return (
     <>
+      {/* Structured Data for each service category */}
+      {serviceCategories.map((category) => (
+        <ServiceSchema key={category.id} category={category} />
+      ))}
+
       {/* Hero Section */}
       <ServicesHero
         categoryCount={categoryCount}

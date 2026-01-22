@@ -6,6 +6,7 @@ import {
   ContactForm,
   GoogleMap,
 } from "@/components/sections/contact";
+import { BreadcrumbSchema } from "@/components/seo";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -29,6 +30,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      {/* Breadcrumb Structured Data */}
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Contact", url: "/contact" },
+        ]}
+      />
+
       {/* Hero Section */}
       <ContactHero />
 
