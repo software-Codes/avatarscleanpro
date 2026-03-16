@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Lexend, DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { ThemeProvider } from "@/components/providers";
@@ -156,6 +157,7 @@ export default function RootLayout({
             <FloatingSocial />
           </ThemeProvider>
         </BrowserErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
