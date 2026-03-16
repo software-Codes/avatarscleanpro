@@ -1,0 +1,1 @@
+export {default as cleanproLogo} from "./cleanpro-logo.jpg";

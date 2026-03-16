@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { cleanproLogo } from "../../../public/images/image";
 
 interface LogoProps {
   /** Logo variant for different contexts */
@@ -14,51 +15,30 @@ interface LogoProps {
 }
 
 /**
- * Brand logo component with multiple variants for different contexts.
- * Features animated sparkle icon and gradient text.
+ * Brand logo component with responsive image logo.
+ * Features hover effects and different sizes for various contexts.
  */
 export function Logo({ variant = "default", className, asLink = true }: LogoProps) {
   const logoContent = (
     <div
       className={cn(
-        "group flex items-center gap-2 transition-opacity hover:opacity-90",
+        "group flex items-center transition-opacity hover:opacity-90",
         className
       )}
     >
-      {/* Icon Badge */}
-      {variant !== "compact" && (
-        <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent shadow-md transition-transform duration-300 group-hover:scale-105">
-          <Sparkles className="h-5 w-5 text-white transition-transform duration-300 group-hover:rotate-12" />
-        </div>
-      )}
-
-      {/* Text */}
-      <div
+      <Image
+        src={cleanproLogo}
+        alt="Avatar CleanPro - Professional Cleaning Services"
+        width={variant === "compact" ? 40 : variant === "footer" ? 64 : 56}
+        height={variant === "compact" ? 40 : variant === "footer" ? 64 : 56}
         className={cn(
-          "flex flex-col",
-          variant === "compact" && "flex-row items-center gap-1"
+          "rounded-full object-cover transition-transform duration-300 group-hover:scale-105 shadow-md",
+          variant === "compact" && "h-8 w-8 sm:h-10 sm:w-10",
+          variant === "default" && "h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14",
+          variant === "footer" && "h-12 w-12 sm:h-16 sm:w-16"
         )}
-      >
-        <span
-          className={cn(
-            "font-heading font-bold leading-tight tracking-tight",
-            variant === "default" && "text-xl",
-            variant === "compact" && "text-lg",
-            variant === "footer" && "text-2xl"
-          )}
-        >
-          <span className="text-foreground">Avatar</span>
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            CleanPro
-          </span>
-        </span>
-
-        {variant === "footer" && (
-          <span className="text-sm text-muted-foreground">
-            Professional Cleaning Services
-          </span>
-        )}
-      </div>
+        priority={variant !== "footer"}
+      />
     </div>
   );
 

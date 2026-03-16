@@ -11,7 +11,7 @@ import { Navigation } from "./Navigation";
 import { MobileMenu } from "./MobileMenu";
 import { siteConfig } from "@/config/site";
 
-interface HeaderProps {
+interface   HeaderProps {
   /** Additional CSS classes */
   className?: string;
 }
