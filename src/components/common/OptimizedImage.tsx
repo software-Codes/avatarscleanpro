@@ -6,6 +6,7 @@ interface OptimizedImageProps extends Omit<ImageProps, "src"> {
   alt: string;
   className?: string;
   priority?: boolean;
+  quality?: number;
 }
 
 /**
@@ -29,6 +30,7 @@ export function OptimizedImage({
   alt,
   className,
   priority = false,
+  quality = 75,
   ...props
 }: OptimizedImageProps) {
   return (
@@ -37,7 +39,7 @@ export function OptimizedImage({
       alt={alt}
       className={cn("object-cover", className)}
       priority={priority}
-      quality={85}
+      quality={quality}
       {...props}
     />
   );
