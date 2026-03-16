@@ -4,12 +4,11 @@ import {
   Mail,
   MapPin,
   Clock,
-  Facebook,
-  Instagram,
   ArrowUpRight,
 } from "lucide-react";
 import { Container } from "./Container";
 import { Logo } from "@/components/common/Logo";
+import { SocialLinks } from "@/components/common/SocialLinks";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -83,25 +82,9 @@ export function Footer() {
             </p>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 pt-2">
-              <a
-                href={siteConfig.links.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href={siteConfig.links.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
+            <div className="pt-2">
+              <h4 className="font-semibold text-foreground mb-3 text-sm">Follow Us</h4>
+              <SocialLinks variant="footer" />
             </div>
           </div>
 

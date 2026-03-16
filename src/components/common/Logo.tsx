@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { cleanproLogo } from "../../../public/images/image";
 
 interface LogoProps {
   /** Logo variant for different contexts */
@@ -27,7 +26,7 @@ export function Logo({ variant = "default", className, asLink = true }: LogoProp
       )}
     >
       <Image
-        src={cleanproLogo}
+        src="/images/cleanpro-logo.jpg"
         alt="Avatar CleanPro - Professional Cleaning Services"
         width={variant === "compact" ? 40 : variant === "footer" ? 64 : 56}
         height={variant === "compact" ? 40 : variant === "footer" ? 64 : 56}

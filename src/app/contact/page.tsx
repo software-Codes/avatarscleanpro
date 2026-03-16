@@ -9,14 +9,36 @@ import {
 import { BreadcrumbSchema } from "@/components/seo";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Us - Get Free Quote | Professional Cleaning Services Nairobi",
   description:
-    "Get in touch with Avatar CleanPro for a free quote or any questions about our professional cleaning services. Call, email, or send us a message.",
+    "Contact Avatar CleanPro for professional cleaning services in Nairobi. Call +254757087848, email avatarcleanpro@gmail.com or get a free quote online. Available Mon-Fri 8AM-6PM, weekends 9AM-4PM.",
+  keywords: [
+    "contact Avatar CleanPro",
+    "cleaning services quote Nairobi",
+    "professional cleaners contact",
+    "cleaning services phone number",
+    "Avatar CleanPro Nairobi contact",
+    "free cleaning quote Kenya",
+    "cleaning services near me"
+  ],
   openGraph: {
-    title: "Contact Us | Avatar CleanPro",
+    title: "Contact Avatar CleanPro | Professional Cleaning Services Nairobi",
     description:
-      "Get in touch with Avatar CleanPro for a free quote. We're here to help with all your cleaning needs.",
+      "Get in touch with Avatar CleanPro for professional cleaning services in Nairobi. Free quotes available. Call +254757087848 or contact us online.",
     url: "https://avatarcleanpro.com/contact",
+    images: [
+      {
+        url: "https://avatarcleanpro.com/images/contact-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Avatar CleanPro - Professional Cleaning Services Nairobi",
+      },
+    ],
+  },
+  twitter: {
+    title: "Contact Avatar CleanPro | Professional Cleaning Services Nairobi",
+    description: "Get in touch for professional cleaning services in Nairobi. Free quotes available. Call +254757087848.",
+    images: ["https://avatarcleanpro.com/images/contact-hero.jpg"],
   },
   alternates: {
     canonical: "https://avatarcleanpro.com/contact",

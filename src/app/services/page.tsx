@@ -16,14 +16,41 @@ import {
 } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Professional Cleaning Services - 10 Categories, 35+ Services",
   description:
-    "Explore our comprehensive range of professional cleaning services including residential, commercial, deep cleaning, laundromat, nanny services, and more. 10 categories with 35+ services to meet all your needs.",
+    "Comprehensive cleaning services in Nairobi: Fumigation, Deep Cleaning, Carpet Cleaning, Mama Fua, Laundry, Office Cleaning, Nanny Services & more. 10 categories with 35+ services. Expert professionals, eco-friendly products, satisfaction guaranteed.",
+  keywords: [
+    "cleaning services Nairobi",
+    "fumigation services Kenya",
+    "deep cleaning Nairobi",
+    "carpet cleaning services",
+    "mama fua services",
+    "laundry services Nairobi",
+    "office cleaning Kenya",
+    "nanny services Nairobi",
+    "post construction cleaning",
+    "airbnb cleaning management",
+    "professional cleaners Nairobi",
+    "cleaning school training"
+  ],
   openGraph: {
-    title: "Our Cleaning Services | Avatar CleanPro",
+    title: "Professional Cleaning Services | Avatar CleanPro Nairobi",
     description:
-      "Explore our comprehensive range of professional cleaning services. Quality you can trust.",
+      "10 categories, 35+ professional cleaning services in Nairobi. Fumigation, deep cleaning, carpet cleaning, laundry & more. Trusted by 500+ customers.",
     url: "https://avatarcleanpro.com/services",
+    images: [
+      {
+        url: "https://avatarcleanpro.com/images/services-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Avatar CleanPro Professional Cleaning Services in Nairobi",
+      },
+    ],
+  },
+  twitter: {
+    title: "Professional Cleaning Services | Avatar CleanPro Nairobi",
+    description: "10 categories, 35+ professional cleaning services in Nairobi. Fumigation, deep cleaning, carpet cleaning & more.",
+    images: ["https://avatarcleanpro.com/images/services-hero.jpg"],
   },
   alternates: {
     canonical: "https://avatarcleanpro.com/services",

@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { SocialLinks } from "@/components/common/SocialLinks";
 
 /**
  * Generate WhatsApp link with pre-filled message
@@ -28,7 +29,7 @@ Looking forward to hearing from you!`;
 
 /**
  * Contact Information Component
- * Displays business contact details with icons and WhatsApp integration
+ * Displays business contact details with icons and social media integration
  */
 export function ContactInfo() {
   const handleWhatsAppClick = () => {
@@ -107,6 +108,12 @@ export function ContactInfo() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Social Media Section */}
+        <div className="pt-4 border-t border-border/50">
+          <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
+          <SocialLinks variant="contact" className="mb-6" />
         </div>
 
         {/* WhatsApp CTA */}

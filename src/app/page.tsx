@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   HeroSection,
   TrustIndicators,
@@ -6,10 +7,45 @@ import {
   Testimonials,
   CTASection,
 } from "@/components/sections/home";
-import {
-  LocalBusinessSchema,
-  WebsiteSchema,
-} from "@/components/seo";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: "Professional Cleaning Services in Nairobi, Kenya",
+  description: "Avatar CleanPro offers expert cleaning services in Nairobi including fumigation, deep cleaning, carpet cleaning, laundry, and nanny services. Trusted by 500+ customers. Get your free quote today!",
+  keywords: [
+    "cleaning services Nairobi",
+    "professional cleaning Kenya",
+    "fumigation services Nairobi",
+    "deep cleaning Nairobi",
+    "carpet cleaning Kenya",
+    "laundry services Nairobi",
+    "nanny services Kenya",
+    "office cleaning Nairobi",
+    "house cleaning services",
+    "Avatar CleanPro"
+  ],
+  openGraph: {
+    title: "Avatar CleanPro | Professional Cleaning Services in Nairobi, Kenya",
+    description: "Expert cleaning services including fumigation, deep cleaning, carpet cleaning & more. Trusted by 500+ customers in Nairobi. Get your free quote today!",
+    url: siteConfig.url,
+    images: [
+      {
+        url: `${siteConfig.url}/images/hero-main.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Avatar CleanPro - Professional Cleaning Services in Nairobi",
+      },
+    ],
+  },
+  twitter: {
+    title: "Avatar CleanPro | Professional Cleaning Services in Nairobi, Kenya",
+    description: "Expert cleaning services including fumigation, deep cleaning, carpet cleaning & more. Trusted by 500+ customers in Nairobi.",
+    images: [`${siteConfig.url}/images/hero-main.jpg`],
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+};
 
 /**
  * Home Page - Avatar CleanPro Landing Page
@@ -25,10 +61,6 @@ import {
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data for SEO */}
-      <LocalBusinessSchema />
-      <WebsiteSchema />
-
       {/* Page Content */}
       <HeroSection />
       <TrustIndicators />
