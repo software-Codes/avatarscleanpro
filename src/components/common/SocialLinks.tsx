@@ -65,7 +65,7 @@ export function SocialLinks({
     },
     {
       name: "LinkedIn",
-      href: siteConfig.contact.Linkedin,
+      href: siteConfig.links.linkedin,
       icon: Linkedin,
       color: "hover:text-[#0A66C2]",
       bgColor: "hover:bg-[#0A66C2]/10",
