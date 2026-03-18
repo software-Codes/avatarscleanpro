@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/providers";
 import { SkipLink } from "@/components/common";
 import { FloatingSocial } from "@/components/common/FloatingSocial";
 import { BrowserCompatibility, BrowserErrorBoundary } from "@/components/common/BrowserCompatibility";
+import { PerformanceMonitor } from "@/components/common/PerformanceMonitor";
 import { LocalBusinessSchema, WebsiteSchema, OrganizationSchema } from "@/components/seo/StructuredData";
 import { Header, Footer } from "@/components/layout";
 
@@ -138,6 +139,11 @@ export default function RootLayout({
         {/* DNS prefetch for better performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="//vercel-insights.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/images/hero-main.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/cleanpro-logo.jpg" as="image" type="image/jpeg" />
         
         {/* Structured data for SEO */}
         <LocalBusinessSchema />
@@ -147,6 +153,7 @@ export default function RootLayout({
       <body className="font-sans antialiased min-h-screen flex flex-col">
         <BrowserErrorBoundary>
           <BrowserCompatibility />
+          <PerformanceMonitor />
           <ThemeProvider>
             <SkipLink />
             <Header />

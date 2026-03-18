@@ -3,30 +3,37 @@ const nextConfig = {
     reactStrictMode: true,
     compress: true,
     poweredByHeader: false,
-    
+
     // Enhanced image optimization for all browsers
     images: {
         formats: ["image/avif", "image/webp"],
-        deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+        deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
         imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         minimumCacheTTL: 31536000, // 1 year
         dangerouslyAllowSVG: true,
         contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**.vercel.app',
+            },
+        ],
     },
-    
+
     // Compiler optimizations
     compiler: {
         removeConsole: process.env.NODE_ENV === "production",
         reactRemoveProperties: process.env.NODE_ENV === "production",
     },
-    
+
     // Performance optimizations
     experimental: {
         optimizePackageImports: ["lucide-react", "@radix-ui/react-dialog", "@radix-ui/react-navigation-menu"],
         optimizeCss: true,
-        webVitalsAttribution: ["CLS", "LCP"],
+        webVitalsAttribution: ["CLS", "LCP", "FID"],
+        scrollRestoration: true,
     },
-    
+
     // Headers for better browser compatibility and security
     async headers() {
         return [

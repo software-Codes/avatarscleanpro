@@ -22,7 +22,8 @@ export function HeroSection() {
             width={imageSizes.hero.width}
             height={imageSizes.hero.height}
             priority
-            sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            quality={80}
             className="h-full w-full object-cover object-center"
           />
         </div>
