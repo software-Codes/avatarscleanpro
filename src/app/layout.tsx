@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   other: {
-    "google-site-verification": process.env.GOOGLE_SITE_VERIFICATION || "",
+    "google-site-verification": "google2fff2dd6cbb34e39",
   },
 };
 
