@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "name": "avatarscleanpro",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "routes": [
     {
       "src": "/sitemap.xml",
@@ -23,11 +16,6 @@
   "build": {
     "env": {
       "NEXT_PUBLIC_SITE_URL": "https://avatarcleanpro.com"
-    }
-  },
-  "functions": {
-    "src/app/**/*.{js,ts,tsx}": {
-      "maxDuration": 10
     }
   },
   "headers": [
